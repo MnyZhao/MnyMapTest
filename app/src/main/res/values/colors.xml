@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="fill">#3376d4f3</color>
+    <color name="stroke">#cc3f91fc</color>
+
+    <color name="fenced_fill">#33FF0000</color>
+    <color name="fenced_stroke">#ccFF0000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="darkgrey"> #C0C0C0</color>
+    <color name="grey"> #ebebeb</color>
+    <color name="white">#FFF</color>
+    <color name="text_hint">#6C6C6C</color>
+
+    <color name="geofence_raido_check_color">#009FE8</color>
+    <color name="bottom_navigation_home">#252525</color>
+
+
+    <color name="geofence_stork_color">#0000FF</color>
+    <color name="geofence_fill_color">#120000FF</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowMapActivity">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/mv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.amap.api.maps.MapView>
+    <Button
+        android:id="@+id/btn_zoom_add"
+        android:layout_width="wrap_content"
+        android:text="增加缩放级别"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_zoom_sub"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:text="减少缩放级别"
+        android:layout_height="wrap_content" />
+</FrameLayout>

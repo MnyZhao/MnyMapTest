@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/bottom_navigation_home"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selecter"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="P0501"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selecter"
+            android:button="@null"
+            android:gravity="center"
+            android:text="P0502"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selecter"
+            android:button="@null"
+            android:gravity="center"
+            android:text="P0503"
+            android:textSize="14sp" />
+    </RadioGroup>
+</LinearLayout>

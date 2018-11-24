@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MnyMap</string>
+    <string name="key">1ce596798b101b027eb7208a8926881a</string>
+
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+</resources>
