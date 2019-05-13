@@ -18,6 +18,7 @@ import com.amap.api.services.geocoder.RegeocodeAddress;
 import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.amap.api.services.share.ShareSearch;
+import com.mny.mnymaptest.utils.GeoLocationSearch;
 
 /**
  * 根据经纬度获取位置信息
@@ -108,7 +109,14 @@ public class MsgActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_getmsg:
                     //搜索
-                    geocodeSearch.getFromLocationAsyn(query);
+//                    geocodeSearch.getFromLocationAsyn(query);
+                    GeoLocationSearch.getInstance().searchLocation(MsgActivity.this,
+                            query, new GeoLocationSearch.searchLocationListener() {
+                        @Override
+                        public void searchLocation(RegeocodeResult regeocodeResult) {
+                            regeocodeResult.getRegeocodeAddress().getFormatAddress();
+                        }
+                    });
                     break;
 
             }

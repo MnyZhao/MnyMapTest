@@ -2,26 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mny.mnymaptest">
-
     <!-- Normal Permissions 不需要运行时注册 -->
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <!-- 请求网络 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- 需要运行时注册的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" /> <!-- 请求网络 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 需要运行时注册的权限 -->
     <!-- 用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 用于访问GPS定位 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 用来读取轨迹记录 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用来读取轨迹记录 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
@@ -37,6 +28,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".pin.PinTestActivity"></activity>
+        <activity android:name=".pin.PinActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,13 +42,10 @@
         <activity android:name=".LocationActivity" />
         <activity android:name=".MsgActivity" />
         <activity android:name=".geofence.GeoActivity" />
-        <activity android:name=".geofence.TestActivity" />
-
-        <!-- 设置key -->
+        <activity android:name=".geofence.TestActivity" /> <!-- 设置key -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="1ce596798b101b027eb7208a8926881a" />
-        <!-- 定位需要的服务 -->
+            android:value="1ce596798b101b027eb7208a8926881a" /> <!-- 定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 
         <activity android:name=".DrawPolygonActivity" />
@@ -73,7 +63,7 @@
         <activity android:name=".path.android_path_record.RecordActivity" />
         <activity android:name=".DemoSlideuppanelActivity" />
         <activity android:name=".poisearch.PoiKeywordSearchActivity" />
-        <activity android:name=".poisearch.PoiSearchActivity"></activity>
+        <activity android:name=".poisearch.PoiSearchActivity" />
     </application>
 
 </manifest>

@@ -110,5 +110,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="仿地图搜索完成的抽屉控件" />
+
+        <Button
+            android:id="@+id/btn_map_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="地图选点 大头针效果" />
+
+        <Button
+            android:id="@+id/btn_map_pin_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="大头针效果" />
     </LinearLayout>
 </ScrollView>

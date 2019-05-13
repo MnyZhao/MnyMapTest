@@ -6,13 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.amap.api.maps.model.Poi;
-import com.mny.mnymaptest.geofence.GeoActivity;
 import com.mny.mnymaptest.path.android_path_record.RecoderPathActivity;
-import com.mny.mnymaptest.path.record.PathRecord;
+import com.mny.mnymaptest.pin.PinActivity;
+import com.mny.mnymaptest.pin.PinTestActivity;
 import com.mny.mnymaptest.poisearch.PoiKeywordSearchActivity;
 import com.mny.mnymaptest.poisearch.PoiSearchActivity;
-import com.mny.mnymaptest.search.SearchActivity;
 import com.mny.mnymaptest.testsearch.TestSearchActivity;
 
 
@@ -59,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_slideup).setOnClickListener(listener);
         findViewById(R.id.btn_go_poi_key_search).setOnClickListener(listener);
         findViewById(R.id.btn_go_poi_slide_search).setOnClickListener(listener);
+        findViewById(R.id.btn_map_pin).setOnClickListener(listener);
+        findViewById(R.id.btn_map_pin_test).setOnClickListener(listener);
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -107,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_slideup:
                     skip(DemoSlideuppanelActivity.class);
+                    break;
+                case R.id.btn_map_pin:
+                    skip(PinActivity.class);
+                    break;
+                case R.id.btn_map_pin_test:
+                    skip(PinTestActivity.class);
                     break;
 
 

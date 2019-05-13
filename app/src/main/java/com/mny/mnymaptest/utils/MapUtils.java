@@ -5,6 +5,8 @@ import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.services.core.LatLonPoint;
 
+import java.util.ArrayList;
+
 /**
  * Crate by E470PD on 2018/11/19
  */
@@ -58,8 +60,20 @@ public class MapUtils {
      * @param fKm
      * @return
      */
-    public  float getZoom(float fKm) {
-        if (1 <= fKm && fKm < 2) {
+    public float getZoom(float fKm) {
+        if (0.01 <= fKm && fKm < 0.025) {
+            return 19;
+        } else if (0.025 <= fKm && fKm < 0.05) {
+            return 18;
+        } else if (0.05 <= fKm && fKm < 0.1) {
+            return 17;
+        } else if (0.1 <= fKm && fKm < 0.2) {
+            return 16;
+        } else if (0.2 <= fKm && fKm < 0.5) {
+            return 15;
+        } else if (0.5 <= fKm && fKm < 1) {
+            return 14;
+        } else if (1 <= fKm && fKm < 2) {
             return 13;
         } else if (2 <= fKm && fKm < 5) {
             return 12;
@@ -85,4 +99,23 @@ public class MapUtils {
         return 13;
     }
 
+    /**
+     * 将String数组坐标集合转换成List坐标集合 当前分隔符为; 根据需求自己写
+     *
+     * @param latLngs
+     * @return
+     */
+    public ArrayList<LatLng> stringLatLngToList(String[] latLngs) {
+        ArrayList<LatLng> lngArrayList = new ArrayList<>();
+        for (String str : latLngs) {
+            String[] lat = str.split(";");
+            for (String latstr : lat) {
+                String[] lats = latstr.split(",");
+                lngArrayList.add(new LatLng(Double
+                        .parseDouble(lats[1]), Double
+                        .parseDouble(lats[0])));
+            }
+        }
+        return lngArrayList;
+    }
 }

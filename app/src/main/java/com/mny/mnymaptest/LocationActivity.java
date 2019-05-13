@@ -64,7 +64,11 @@ public class LocationActivity extends AppCompatActivity {
             mAMap.moveCamera(CameraUpdateFactory.changeLatLng(markerPosition));
         }
         MyLocationStyleUtils locationStyleUtils = new MyLocationStyleUtils();
-        MyLocationStyle locationStyle = locationStyleUtils.getStyleType(R.drawable.ic_position, 1000, MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE_NO_CENTER, true);
+        MyLocationStyle locationStyle = locationStyleUtils.getStyleType(
+                R.drawable.ic_position,
+                1000, MyLocationStyle.LOCATION_TYPE_LOCATE,
+                true, getResources().getColor(R.color.fill),
+                1, getResources().getColor(R.color.fill));
         locationStyle.radiusFillColor(R.color.colorPrimaryDark);//设置填充色
         locationStyle.strokeWidth(1);//设置边框宽度
         locationStyle.strokeColor(R.color.colorAccent);//边框颜色
@@ -107,7 +111,11 @@ public class LocationActivity extends AppCompatActivity {
         }
         MyLocationStyleUtils locationStyleUtils = new MyLocationStyleUtils();
         //移动到中心
-        MyLocationStyle locationStyle = locationStyleUtils.getStyleType(R.drawable.ic_position, 1000, MyLocationStyle.LOCATION_TYPE_LOCATE, false);
+        MyLocationStyle locationStyle = locationStyleUtils.getStyleType(
+                R.drawable.ic_position,
+                1000, MyLocationStyle.LOCATION_TYPE_LOCATE,
+                true, getResources().getColor(R.color.fill),
+                1, getResources().getColor(R.color.fill));
         //设置之后就与右上角定位按钮结合到一起
         mAMap.setLocationSource(locationSource);//设置定位源 不设置则getMyLocation为空 也可以不设置 直接用start
         mAMap.setMyLocationStyle(locationStyle);
@@ -116,7 +124,7 @@ public class LocationActivity extends AppCompatActivity {
         mAMap.setOnMapClickListener(new AMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                Toast.makeText(LocationActivity.this,latLng.latitude+":"+latLng.longitude,Toast.LENGTH_SHORT).show();
+                Toast.makeText(LocationActivity.this, latLng.latitude + ":" + latLng.longitude, Toast.LENGTH_SHORT).show();
             }
         });
         startlocation();

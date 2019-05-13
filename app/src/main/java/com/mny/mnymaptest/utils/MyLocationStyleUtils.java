@@ -26,13 +26,13 @@ public class MyLocationStyleUtils {
      *                         或者通过AMap.调用
      * @param isShowMylocation 是否显示小蓝点 true 显示 false 不显示
      * @param id               要替换的图
-     *                         可以增加设置
+     *                         可以增加设置 颜色不能直接传id 通过getResuse().getColor();
      *                         locationStyle.radiusFillColor(R.color.colorPrimaryDark);//设置填充色
      *                         locationStyle.strokeWidth(1);//设置边框宽度
      *                         locationStyle.strokeColor(R.color.colorAccent);//边框颜色
      * @return
      */
-    public MyLocationStyle getStyleType(int id, long time, int type, boolean isShowMylocation) {
+    public MyLocationStyle getStyleType(int id, long time, int type, boolean isShowMylocation,int fillColor,int storkWidth,int storkColor) {
         MyLocationStyle myLocationStyle;
         myLocationStyle = new MyLocationStyle();//初始化定位蓝点样式类myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);//连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。（1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(id));
@@ -40,6 +40,9 @@ public class MyLocationStyleUtils {
         myLocationStyle.myLocationType(type);//设置定位模式 默认跟随
         //用于满足只想使用定位，不想使用定位小蓝点的场景，设置false以后图面上不再有定位蓝点的概念，但是会持续回调位置信息。
         myLocationStyle.showMyLocation(isShowMylocation);
+        myLocationStyle.radiusFillColor(fillColor);
+        myLocationStyle.strokeColor(storkColor);
+        myLocationStyle.strokeWidth(storkWidth);
         return myLocationStyle;
     }
 }
