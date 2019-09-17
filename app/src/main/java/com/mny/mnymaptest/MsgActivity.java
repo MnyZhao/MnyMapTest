@@ -21,7 +21,7 @@ import com.amap.api.services.share.ShareSearch;
 import com.mny.mnymaptest.utils.GeoLocationSearch;
 
 /**
- * 根据经纬度获取位置信息
+ * 根据经纬度获取位置信息 逆地理编码
  */
 public class MsgActivity extends AppCompatActivity {
     public String TAG = MsgActivity.class.getName();
@@ -108,8 +108,9 @@ public class MsgActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_getmsg:
-                    //搜索
-//                    geocodeSearch.getFromLocationAsyn(query);
+                    //搜索1 逆地理编码
+                    geocodeSearch.getFromLocationAsyn(query);
+                    //搜索2 获取格式化地址
                     GeoLocationSearch.getInstance().searchLocation(MsgActivity.this,
                             query, new GeoLocationSearch.searchLocationListener() {
                         @Override
