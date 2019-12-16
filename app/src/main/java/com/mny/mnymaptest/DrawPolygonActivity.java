@@ -126,7 +126,7 @@ public class DrawPolygonActivity extends AppCompatActivity {
                     mLatLnglist1.set(i, marker.getPosition());
                 }
             }
-            drawUtils.addPolygon(5, Color.parseColor("#050505"), Color.parseColor("#55FBEFDD"), mLatLnglist1);
+            drawUtils.addPolygons(5, Color.parseColor("#050505"), Color.parseColor("#55FBEFDD"), mLatLnglist1);
             mMarkerList = drawUtils.addMarker(true, true, mLatLnglist1);
             // 删除当前marker并销毁Marker的图片等资源
             marker.destroy();
@@ -156,8 +156,10 @@ public class DrawPolygonActivity extends AppCompatActivity {
                 default:
                     break;
                 case R.id.btn_draw_payload:
-                    drawUtils.addPolygon(5, Color.parseColor("#050505"),
-                            Color.parseColor("#55FBEFDD"), initLatLngData1());
+//                    drawUtils.addPolygon(5, Color.parseColor("#050505"),
+//                            Color.parseColor("#55FBEFDD"), initLatLngData1());
+                    drawUtils.addRectPoly(5, Color.parseColor("#050505"),
+                            Color.parseColor("#55FBEFDD"), initLatLngData1(),400);
 
                     break;
                 case R.id.btn_draw_marker:
