@@ -79,7 +79,29 @@ public class DrawUtils {
         // 在地图上添加一个多边形（polygon）对象
         aMap.addPolygon(polygonOptions);
     }
+    /**
+     * 多边形
+     *
+     * @param width       边框宽度
+     * @param strokeColor 颜色不能传R.color.id  getResuse().getColor(R.color.id);
+     * @param fillColor   颜色不能传R.color.id  getResuse().getColor(R.color.id);
+     * @param latLnglist
+     */
+    public Polygon addPolygon(float width, int strokeColor, int fillColor, List<LatLng> latLnglist) {
 
+        // 声明 多边形参数对象
+        PolygonOptions polygonOptions = new PolygonOptions();
+        // 添加 多边形的每个顶点（顺序添加）
+        /*for (LatLng latLng : latLnglist) {
+            polygonOptions.add(latLng);
+        }*/
+        polygonOptions.addAll(latLnglist);//添加所有
+        polygonOptions.strokeWidth(width); // 多边形的边框宽度
+        polygonOptions.strokeColor(strokeColor); // 边框颜色
+        polygonOptions.fillColor(fillColor);   // 多边形的填充色
+        // 在地图上添加一个多边形（polygon）对象
+        return aMap.addPolygon(polygonOptions);
+    }
     /**
      * @param isStrokeType 是否开启虚线 开启后要选择虚线类型
      * @param strokeType   边框线类型 AMapPara.DOTTEDLINE_TYPE_DEFAULT:不绘制虚线（默认）
